@@ -1,16 +1,9 @@
 { pkgs }: {
-    deps = [
-        pkgs.nodejs-16_x
-        pkgs.libwebp
-	    pkgs.nodePackages.typescript
-        pkgs.libuuid
-        pkgs.ffmpeg
-        pkgs.imagemagick  
-        pkgs.wget
-        pkgs.git
-        pkgs.nodePackages.pm2
-    ];
-  env ={
-    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [pkgs.libuuid];
-  };
+  deps = [
+    pkgs.nodejs-20_x # Update Node.js to a supported version
+    pkgs.nodePackages.typescript-language-server
+    pkgs.yarn
+    pkgs.replitPackages.jest
+    pkgs.pm2 # Install pm2 if you need it
+  ];
 }
